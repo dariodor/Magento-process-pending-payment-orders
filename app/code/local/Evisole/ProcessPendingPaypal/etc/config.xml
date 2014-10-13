@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Evisole_ProcessPendingPaypal>
+            <version>1.0</version>
+        </Evisole_ProcessPendingPaypal>
+    </modules>
+
+    <global>
+        <models>
+            <evisole_processpendingpaypal>
+                <class>Evisole_ProcessPendingPaypal_Model</class>
+            </evisole_processpendingpaypal>                         
+        </models>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <!-- evisole handle for our layout update XML -->
+                <evisole_processpendingpaypal>
+                    <!-- Here we put our layout file in a new folder (evisole) to seperate the layout file from the core Magento layout files -->
+                    <file>evisole_processpendingpaypal.xml</file>
+                </evisole_processpendingpaypal>
+            </updates>
+        </layout>
+    </frontend>
+
+    <crontab>
+        <jobs>
+            <process_pending_payment_cron>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>evisole_processpendingpaypal/observer::processPendingOrders</model></run>
+            </process_pending_payment_cron>
+        </jobs>
+    </crontab>
+
+</config>

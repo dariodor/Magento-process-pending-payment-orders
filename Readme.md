@@ -2,7 +2,7 @@
 
 ## Backup
 
-This module is provided "as is" and I'll not be responsible for any data damage.
+This module is provided "as is" and I'll not be responsible for any data damage
 
 ## Installation
 
